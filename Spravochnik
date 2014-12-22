@@ -1,0 +1,76 @@
+// console
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class consoleHelper {
+    public static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    public static void introduction(){
+        System.out.println("Введите 1 для добавления контакта");
+        System.out.println("Vvedite 2 dla udalenia kontakta");
+        System.out.println("3 - vivesti vse kontakti");
+        System.out.println("4 - vivesti kol-vo kontaktov");
+        System.out.println("5 - завершение работы");
+    }
+    public static void askMetod() throws IOException {
+        String answer = reader.readLine();
+        switch (Integer.parseInt(answer)) {
+            case 1:
+                AddContact contact = new AddContact();
+                contact.addPeople();
+                break;
+            case 2:
+                DeleteContact contact1 = new DeleteContact();
+                contact1.delete();
+                break;
+            case 3:
+                ShowContact contact2 = new ShowContact();
+                contact2.show();
+                break;
+            case 4:
+                ShowCount count = new ShowCount();
+                count.show();
+                break;
+            case 5:
+                EndWork end = new EndWork();
+                end.endWork();
+                break;
+        }
+
+    }
+}
+//addContact
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class AddContact {
+    public static ArrayList<String> fName = new ArrayList<String>();
+    public static ArrayList<String> cityName = new ArrayList<String>();
+    public static ArrayList<String> agePerson = new ArrayList<String>();
+
+    public void addPeople() throws IOException {
+        String userName = consoleHelper.reader.readLine();
+        String[] tmp = userName.split(" ");
+    }
+}
+//delete
+public class DeleteContact {
+    public void delete() {
+    }
+}
+//showContact
+public class ShowContact {
+    public void show() {
+    }
+}
+//showCount
+public class ShowCount {
+    public void show() {
+    }
+}
+//endWork
+public class EndWork {
+    public void endWork() {
+    }
+}
